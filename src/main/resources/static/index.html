@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bate-Papo Ao Vivo</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="./style/main.css" rel="stylesheet"/>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div id="chat-wrapper">
+    <header class="chat-header">
+      <div class="chat-title">
+        <i class="fa-solid fa-comments"></i>
+        <span>Bate-Papo Online</span>
+      </div>
+      <div class="chat-actions">
+        <button id="connect" class="btn connect-btn" aria-label="Entrar no chat"><i class="fa-solid fa-link"></i> Entrar</button>
+        <button id="disconnect" class="btn disconnect-btn" disabled aria-label="Sair do chat"><i class="fa-solid fa-power-off"></i> Sair</button>
+      </div>
+    </header>
+
+    <section class="chat-footer">
+      <input id="user" type="text" placeholder="Seu nome" aria-label="Digite seu nome"/>
+      <input id="msg" type="text" placeholder="Digite sua mensagem..." aria-label="Digite sua mensagem"/>
+      <button id="send" class="btn send-btn" aria-label="Enviar mensagem"><i class="fa-solid fa-paper-plane"></i></button>
+    </section>
+
+    <main class="chat-main">
+      <ul id="livechat" class="chat-messages">
+      </ul>
+    </main>
+
+    <!-- Error Messages -->
+    <div id="error-message" class="error-message" style="display:none;"></div>
+  </div>
+</body>
+</html>
